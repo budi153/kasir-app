@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Kasir</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- 🔥 CHART JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="main">
+
+    <!-- KIRI -->
+    <div class="left">
+        <div class="header-toko">
+            <img src="bengkel.jpg" class="logo-toko">
+            <h1>BENGKEL YUDHY MOTOR</h1>
+            <p class="subtitle">
+                Desa Damai Makmur, Jln No.E5, Sidetapa, Kec. Nuhon, Kabupaten Banggai
+            </p>
+            <p class="subtitle">📞 0822-1158-8263</p>
+        </div>
+    </div>
+
+    <!-- KANAN -->
+    <div class="right">
+
+        <!-- INPUT -->
+        <div class="input-area">
+            <input type="text" id="namaCustomer" placeholder="Nama Customer">
+
+            <select id="metodeBayar">
+                <option value="Cash">Cash</option>
+                <option value="Transfer">Transfer</option>
+            </select>
+
+            <input type="text" id="namaBarang" placeholder="Nama Barang">
+            <input type="text" id="hargaBarang" placeholder="Harga">
+            <input type="number" id="jumlahBarang" placeholder="Jumlah">
+
+            <button onclick="tambahBarang()">Tambah</button>
+        </div>
+
+        <!-- TABEL -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Nama Barang</th>
+                    <th>Harga</th>
+                    <th>Jumlah</th>
+                    <th>Subtotal</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody id="daftarBarang"></tbody>
+        </table>
+
+        <!-- TOTAL + BUTTON -->
+        <div class="total">
+            <h2>Total: Rp <span id="totalHarga">0</span></h2>
+            <button onclick="bayar()">Bayar</button>
+            <button onclick="lihatLaporan()">Lihat Laporan</button>
+            <button onclick="exportExcel()">Download Excel</button>
+            <button onclick="lihatGrafik()">Lihat Grafik</button>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- NOTIF -->
+<div id="notif" class="notif">Barang berhasil ditambahkan!</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
